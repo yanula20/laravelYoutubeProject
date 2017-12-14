@@ -1,8 +1,8 @@
 <!-- Footer -->
 <section id="footer">
 	<div class="inner">
-		<h2 class="major">Get in touch</h2>
-		<p>Have any questions or requests for me to do, or just wanna say hi? Send below with this lovely contact form. :-)</p>
+		<h2 class="major">{{$infoTable->section_five_title}}</h2>
+		<p>{{$infoTable->section_four_description}}</p>
 		<form method="post" action="#">
 			<div class="field">
 				<label for="name">Name</label>
@@ -22,16 +22,38 @@
 		</form>
 		<ul class="contact">
 			<li class="fa-home">
-				Web Dev Profesh<br />
-				Based in Corona, CA<br />
+				{{$infoTable->title}}<br />
+				{{$infoTable->social_address_1}}<br />
 			</li>
-			<li class="fa-envelope"><a href="mailto:contact@webdevprofesh.com">contact@webdevprofesh.com</a></li>
-			<li class="fa-twitter"><a href="https://youtube.com/c/webdevprofesh">youtube.com/c/webdevprofesh</a></li>
-			<li class="fa-facebook"><a href="https://fb.me/webdevprofesh">fb.me/webdevprofesh</a></li>
-			<li class="fa-github"><a href="https://github.com/webdevprofesh">github.com/webdevprofesh</a></li>
+			
+			@if($infoTable->social_address_2)
+				<li class="fa-envelope"><a href="#">{{$infoTable->social_address_2}}</a></li>
+			@endif
+
+			@if($infoTable->social_twitter)
+				<li class="fa-twitter"><a href="#">{{$infoTable->social_twitter}}</a></li>
+			@endif
+
+			@if($infoTable->social_facebook)
+				<li class="fa-facebook"><a href="#">{{$infoTable->social_facebook}}</a></li>
+			@endif
+
+			@if($infoTable->social_github)
+				<li class="fa-github"><a href="#">{{$infoTable->social_github}}</a></li>
+			@endif
+
+			@if($infoTable->social_instagram)
+				<li class="fa-instagram"><a href="#">{{$infoTable->social_instagram}}</a></li>
+			@endif
+
+			@if($infoTable->social_youtube)
+				<li class="fa-youtube"><a href="#">{{$infoTable->social_youtube}}</a></li>
+			@endif
+
+
 		</ul>
 		<ul class="copyright">
-			<li>&copy; Web Dev Profesh Inc. All rights reserved.</li><li>Layout: <a target="_blank" href="http://html5up.net">HTML5 UP</a></li><li>Pictures: <a target="_blank" href="https://unsplash.com">Unsplash</a></li>
+			<li>&copy; {{$infoTable->title}} All rights reserved.</li><li>Layout: <a target="_blank" href="http://html5up.net">HTML5 UP</a></li><li>Pictures: <a target="_blank" href="https://unsplash.com">Unsplash</a></li>
 		</ul>
 	</div>
 </section>

@@ -4,20 +4,17 @@
     @include('partials._menu')
     @include('partials._banner')
 
-
-
-
 <!-- Wrapper -->
 <section id="wrapper">
 
     <!-- One -->
         <section id="one" class="wrapper spotlight style1">
             <div class="inner">
-                <a href="/#latest-videos" class="image"><img src="/assets/images/video-thumb.png" alt="Videos" /></a>
+                <a href="/#latest-videos" class="image"><img src="{{$infoTable->section_one_image}}" alt="Videos" /></a>
                 <div class="content">
-                    <h2 class="major">videos</h2>
-                    <p>Check out the YouTube channel to see the latest video releases  and make sure you  like, comment, and subscribe!</p>
-                    <a href="/#latest-videos" class="special">see latest videos</a>
+                    <h2 class="major">{{$infoTable->section_one_title}}</h2>
+                    <p>{{$infoTable->section_one_description}}</p>
+                    <a href="{{$infoTable->section_one_link}}" class="special">{{$infoTable->section_one_link_title}}</a>
                 </div>
             </div>
         </section>
@@ -25,11 +22,11 @@
     <!-- Two -->
         <section id="two" class="wrapper alt spotlight style2">
             <div class="inner">
-                <a href="#" class="image"><img src="/assets/images/github.png" alt="Github" /></a>
+                <a href="#" class="image"><img src="{{$infoTable->section_two_image}}" alt="Github" /></a>
                 <div class="content">
-                    <h2 class="major">behind the code</h2>
-                    <p>See all the code at the community Github account.  Feel free to take a pull, and make some changes you think would be cool.</p>
-                    <a href="https://github.com/webdevprofesh" class="special">Learn more</a>
+                    <h2 class="major">{{$infoTable->section_two_title}}</h2>
+                    <p>{{$infoTable->section_two_description}}</p>
+                    <a href="{{$infoTable->section_two_link}}" class="special">{{$infoTable->section_two_link_title}}</a>
                 </div>
             </div>
         </section>
@@ -37,11 +34,11 @@
     <!-- Three -->
         <section id="three" class="wrapper spotlight style3">
             <div class="inner">
-                <a href="#" class="image"><img src="/assets/images/work-station.png" alt="Work Station" /></a>
+                <a href="#" class="image"><img src="{{$infoTable->section_three_image}}" alt="Work Station" /></a>
                 <div class="content">
-                    <h2 class="major">behind the scenes</h2>
-                    <p>Check out my set up and the processes involved in creating a YouTube channel.</p>
-                    <a href="#" class="special">coming soon</a>
+                    <h2 class="major">{{$infoTable->section_three_title}}</h2>
+                    <p>{{$infoTable->section_three_description}}</p>
+                    <a href="{{$infoTable->section_three_link}}"class="special">{{$infoTable->section_three_link_title}}</a>
                 </div>
             </div>
         </section>
@@ -49,8 +46,8 @@
     <!-- Four -->
         <section id="four" class="wrapper alt style1">
             <div class="inner">
-                <h2 class="major">latest videos</h2>
-                <p>Check out the latest Web Dev Profesh videos.</p>
+                <h2 class="major">{{$infoTable->section_four_title}}</h2>
+                <p>{{$infoTable->section_four_description}}</p>
                 <section class="features">
                     <article>
                         <a href="#" class="image"><img src="https://unsplash.it/600/350.jpg" alt="" /></a>
