@@ -1,0 +1,7 @@
+---
+
+- name: Installing Git 
+  apt: name=git state=present update_cache=yes
+
+- name: Install latest Git 
+  apt: name=git state=latest update_cache=yes

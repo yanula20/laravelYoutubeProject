@@ -1,0 +1,14 @@
+---
+
+- name: Install wget php.7-curl curl
+  apt: name={{item}} state=present
+  with_items:
+  - wget
+  - php7.0-common
+  - libnet-ssleay-perl
+  - libauthen-pam-perl
+  - apt-show-versions
+  - libio-pty-perl
+  - php7.0-curl
+  - libapt-pkg-perl
+  - curl 

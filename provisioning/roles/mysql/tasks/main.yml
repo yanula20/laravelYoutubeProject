@@ -1,0 +1,26 @@
+---
+
+- name: Installing MySQL
+  apt: name={{item}} state=present
+  with_items:
+  - python-mysqldb
+  - mysql-server
+
+- name: Start MySQL Service
+  service: name=mysql state=started enabled=yes
+
+- name: Update MySQL Password
+  mysql_user: 
+    name: root
+    host: "{{item}}"
+    password: "{{mysql_root_password}}"
+    check_implicit_admin: yes
+    priv: "*.*:All,GRANT"
+  with_items:
+  - homestead_7
+  - 127.0.0.1
+  - ::1
+  - localhost
+  - vagrant 
+
+ 

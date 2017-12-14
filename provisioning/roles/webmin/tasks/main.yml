@@ -1,0 +1,20 @@
+---
+
+
+- name: Downloading Webmin
+  get_url:
+    url: http://prdownloads.sourceforge.net/webadmin/webmin_1.860_all.deb
+    dest: /usr/bin/
+    mode: 0755
+#webmin is now in apt-cache
+
+
+- name: Installing current webmin
+  become: yes
+  state: present
+  update_cache: yes
+  apt: 
+    deb: /usr/bin/webmin_1.860_all.deb
+
+- name: Update apt
+  apt: update_cache=yes

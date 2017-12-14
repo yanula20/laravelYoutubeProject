@@ -1,0 +1,11 @@
+---
+#- apache2-mpm-prefork, dnw here. Broken packages
+- name: Install Apache2
+  apt: name=apache2 state=present
+
+- name: Install Apache 2 doc and apache2-utils
+  apt: name={{item}} state=present
+  with_items:
+  - apache2-utils
+
+

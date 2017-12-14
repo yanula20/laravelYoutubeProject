@@ -1,0 +1,12 @@
+---
+#hosts: points to hosts.yml file
+
+- name: homestead_7
+  hosts: homestead_7
+  become: yes 
+  roles:
+    - {name: ansiblerepo, tags: "ansiblerepo"}
+    - {name: curl, tags: "curl"}
+    - {name: general, tags: "general"}
+    - {name: webmin, tags: "webmin"}
+    

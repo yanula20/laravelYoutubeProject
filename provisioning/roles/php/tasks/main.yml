@@ -1,0 +1,39 @@
+---
+
+
+- name: Installing PHP Dependencies
+  apt: name={{item}} state=present
+  with_items:
+  - python-software-properties 
+  - software-properties-common
+
+- name: Update apt cache
+  apt: update_cache=yes
+
+- name: Install PHP 7.0
+  apt: name={{item}} state=present
+  with_items:
+  - php7.0-common
+  - php7.0-cli
+  - php7.0-dev
+  - php7.0-fpm
+  - libpcre3-dev
+  - php7.0-gd
+  - php7.0-curl
+  - php7.0-imap
+  - php7.0-json
+  - php7.0-opcache
+  - php7.0-xml
+  - php7.0-mbstring
+  
+- name: Update apt cache
+  apt: update_cache=yes
+
+#- name: Enable Mcrypt Mod
+  #raw: phpemod mcrypt 
+
+- name: Create a default page for PHP
+  lineinfile: dest=/var/www/html/phpinfo.php
+    regexp='^'
+    line='<?php phpinfo(); ?>'
+    create=true
