@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PageController@welcome')->name('welcome');
+
 Route::get('about', function () {
 
     return view('about', [
